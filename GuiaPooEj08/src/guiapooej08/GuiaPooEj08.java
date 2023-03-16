@@ -24,6 +24,9 @@ ingresa el usuario y devuelve verdadero si la contiene y falso si no.
  */
 package guiapooej08;
 
+import Entidad.Cadena;
+import java.util.Scanner;
+
 /**
  *
  * @author Sebastian
@@ -31,7 +34,31 @@ package guiapooej08;
 public class GuiaPooEj08 {
 
     public static void main(String[] args) {
-        
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
+        Cadena cad = new Cadena();
+        System.out.println("Ingrese una frase:");
+        String frase = leer.next();
+        cad.setFrase(frase);
+        cad.setLongitud(frase.length());
+
+        cad.mostrarVocales();
+        cad.invertirFrase();
+        System.out.println("Ingrese un caracter a buscar en la frase:");
+        String letra = leer.next().substring(0, 1);
+        cad.vecesRepetido(letra);
+        System.out.println("Ingrese otra frase:");
+        cad.compararLongitud(leer.next());
+        System.out.println("Ingrese otra frase:");
+        cad.unirFrases(leer.next());
+        System.out.println("Ingrese una letra");
+        cad.reemplazar(leer.next().substring(0, 1));
+        System.out.println("Ingrese otra letra");
+        String letra2 = leer.next().substring(0, 1);
+        if (cad.contiene(letra2)) {
+            System.out.println("La letra fue encontrada dentro de la frase.");
+        } else {
+            System.out.println("La letra no fue encontrada.");
+        }
     }
-    
+
 }
