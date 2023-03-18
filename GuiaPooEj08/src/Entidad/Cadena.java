@@ -26,7 +26,7 @@ package Entidad;
 
 /**
  *
- * @author Flor
+ * @author Sebastian
  */
 public class Cadena {
 
